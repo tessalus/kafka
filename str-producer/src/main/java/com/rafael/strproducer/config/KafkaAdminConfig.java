@@ -3,6 +3,7 @@ package com.rafael.strproducer.config;
 import java.util.HashMap;
 
 import org.apache.kafka.clients.admin.AdminClientConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +16,8 @@ import lombok.RequiredArgsConstructor;
 @Configuration
 public class KafkaAdminConfig {
 
-	private final KafkaProperties properties = new KafkaProperties();
+	@Autowired
+	private KafkaProperties properties;
 	
 	@Bean
 	public KafkaAdmin kafkaAdmin() {
