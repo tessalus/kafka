@@ -2,6 +2,8 @@ package com.rafael.strconsumer.listener;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.kafka.annotation.EnableKafka;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 import com.rafael.strconsumer.custom.StrConsumerCustomListener;
@@ -24,7 +26,7 @@ public class StrConsumerListener {
 		log.info("LOG ::: message {}", message);
 	}	
 	
-	@StrConsumerCustomListener(groupId = "group-2")
+	@KafkaListener(groupId = "group-2", topics = "str-topic", containerFactory = "validMessageContainerFactory")
 	public void history(String message) {
 		log.info("HISTORY ::: message {}", message);
 	}	
