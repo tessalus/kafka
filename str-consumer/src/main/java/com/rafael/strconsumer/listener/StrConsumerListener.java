@@ -1,5 +1,10 @@
 package com.rafael.strconsumer.listener;
 
+<<<<<<< HEAD
+=======
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+>>>>>>> 69ad30d25db341addcb3897af610a7498254c940
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
